@@ -1,0 +1,274 @@
+body {
+  background-color: #829459;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+body.loaded #loading-animation {
+  display: none;
+}
+
+#loading-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9999;
+}
+#loading-animation::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #777;
+  border-top-color: #fff;
+  animation: loading 1s ease-in-out infinite;
+}
+
+#profile-picture {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#personal-info {
+  margin-top: 50px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+#personal-info::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#personal-info h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+#personal-info p {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#personal-info span {
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#personal-info span:hover {
+  opacity: 1;
+}
+
+#personal-info #age {
+  opacity: 1;
+}
+
+#talents, #hobbies {
+  margin-top: 20px;
+}
+
+#talents h2, #hobbies h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#talents ul, #hobbies ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#talents li, #hobbies li {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+.button:hover {
+  background-color: #0062cc;
+}
+.button:active {
+  transform: translateY(2px);
+}
+
+.button-secondary {
+  background-color: #6c757d;
+}
+.button-secondary:hover {
+  background-color: #545b62;
+}
+
+.form {
+  margin-top: 20px;
+}
+.form::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.form label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.form input[type=text], .form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.form input[type=text]:focus, .form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form textarea {
+  height: 100px;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.profile .profile-image {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.profile .profile-image:hover {
+  transform: scale(1.1);
+}
+
+.name {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: font-size 0.3s ease-in-out;
+}
+.name:hover {
+  font-size: 28px;
+}
+
+.birthdate {
+  text-align: center;
+  margin-bottom: 10px;
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+.birthdate:hover {
+  opacity: 0.5;
+}
+
+.age {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.talents {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.talents button {
+  margin-right: 5px;
+}
+
+.hobbies {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.hobbies button {
+  margin-right: 5px;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.loading .loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+
+#profile-picture {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+#profile-picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=stylesheet.css.map */
